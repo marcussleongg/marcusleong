@@ -20,18 +20,18 @@ export default async function BlogPostPage({
         {post.published_at && (
           <div className="text-gray-600">
             <time dateTime={post.published_at}>
-              {new Date(post.published_at).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}
+            {new Date(post.published_at).toLocaleDateString('en-GB', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric'
+                    })}
             </time>
           </div>
         )}
       </header>
       
       <div className="prose prose-lg max-w-none">
-        <div className="whitespace-pre-wrap">{post.content}</div>
+        <div dangerouslySetInnerHTML={{ __html: post.content }} />
       </div>
     </article>
   )

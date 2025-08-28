@@ -1,12 +1,13 @@
 import { getPosts } from '@/lib/posts'
+import Navbar from '@/components/Navbar'
 import Link from 'next/link'
 
 export default async function BlogPage() {
   const posts = await getPosts()
-  console.log(posts)
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="max-w-3xl mx-auto px-4 py-8">
+      <Navbar />
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
       
       {posts.length === 0 ? (
@@ -19,18 +20,16 @@ export default async function BlogPage() {
                 <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                   {post.title}
                 </h2>
-                {post.published_at && (
-                  <time 
+                <time 
                     dateTime={post.published_at}
                     className="text-sm text-gray-500 mb-2 block"
                   >
-                    {new Date(post.published_at).toLocaleDateString('en-US', {
+                    {new Date(post.published_at).toLocaleDateString('en-GB', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
                     })}
                   </time>
-                )}
               </Link>
             </article>
           ))}
