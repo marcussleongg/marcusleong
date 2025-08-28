@@ -6,7 +6,7 @@ export default async function BlogPage() {
   const posts = await getPosts()
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-8">
+    <div className="px-20 py-8 max-w-full sm:max-w-2xl md:max-w-3xl mx-auto">
       <Navbar />
       <h1 className="text-4xl font-bold mb-8">Blog</h1>
       

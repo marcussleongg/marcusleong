@@ -3,7 +3,7 @@ import Navbar from '@/components/Navbar'
 
 export default function Page() {
     return (
-        <div className="max-w-3xl mx-auto px-4 py-8">
+        <div className="px-20 py-8 max-w-full sm:max-w-2xl md:max-w-3xl mx-auto">
           <h1>Marcus Leong</h1>
           <Navbar />
           <Image src="globe.svg" alt="globe" width={100} height={100}/>
