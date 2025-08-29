@@ -4,12 +4,40 @@
   color-scheme: light dark;
 }
 
+h1 {
+    color: hsl(267, 13%, 74%);
+}
+
 body[data-theme='light'] {
-    color: hsl(240, 50%, 7%);
-    background-color: hsl(240, 47%, 97%);
+    color: hsl(264, 12%, 8%);
+    background-color: hsl(276, 12%, 92%);
 }
 
 body[data-theme='dark'] {
-    color: hsl(240, 50%, 93%);
-    background-color: hsl(240, 47%, 3%);
+    color: hsl(264, 13%, 92%);
+    background-color: hsl(274, 8%, 18%);
+}
+
+p {
+    font-family: var(--font-eb-garamond), serif;
+}
+
+.nav-link {
+    transition: color 0.2s ease;
+}
+
+body[data-theme='light'] .nav-link {
+    color: hsl(264, 12%, 8%);
+}
+
+body[data-theme='light'] .nav-link:hover {
+    color: hsl(264, 13%, 50%);
+}
+
+body[data-theme='dark'] .nav-link {
+    color: hsl(264, 13%, 92%);
+}
+
+body[data-theme='dark'] .nav-link:hover {
+    color: hsl(264, 13%, 70%);
 }

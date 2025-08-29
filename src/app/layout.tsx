@@ -1,5 +1,12 @@
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { EB_Garamond } from 'next/font/google'
+
+const ebGaramond = EB_Garamond({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-eb-garamond',
+})
 
 export default function RootLayout({
   children,
@@ -8,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen">
+      <body className={`min-h-screen ${ebGaramond.variable}`}>
         <ThemeProvider>
-          <main>{children}</main>
+          <main className="p-12">{children}</main>
         </ThemeProvider>
       </body>
     </html>
