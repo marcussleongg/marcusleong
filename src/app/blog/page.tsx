@@ -6,33 +6,35 @@ export default async function BlogPage() {
   const posts = await getPosts()
 
   return (
-    <div className="flex flex-col items-start px-5 py-8 max-w-full md:max-w-7xl mx-auto">
+    <div className="flex flex-col items-start px-5 py-8 max-w-full md:max-w-7xl mx-auto min-h-screen">
       <div className="flex justify-end md:justify-start">
         <Navbar border-b border-gray-200 />
       </div>
 
-      <div className="w-full border-b border-gray-200 my-4"></div>
+      <div className="w-full border-b border-gray-200 my-4 [@media(hover:hover)]:hidden"></div>
       
       {posts.length === 0 ? (
         <p className="text-gray-600">No posts published yet.</p>
       ) : (
-        <div className="space-y-6 border-4 border-dotted border-spacing-x-3 border-gray-200 p-6 rounded-lg min-w-2xl">
+        <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto border-3 border-dotted p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
           {posts.map((post) => (
-            <article key={post.id} className="pb-6">
+            <article key={post.id} className="pb-6 flex flex-col">
               <Link href={`/blog/${post.slug}`} className="group">
-                <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
-                  {post.title}
-                </h2>
-                <time 
-                    dateTime={post.published_at}
-                    className="text-sm text-gray-500 mb-2 block"
-                  >
-                    {new Date(post.published_at).toLocaleDateString('en-GB', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-                  </time>
+                <div className="flex justify-between group-hover:text-[#987988] transition-colors">
+                  <h2 className="text-l font-semibold mb-2">
+                    {post.title}
+                  </h2>
+                  <time 
+                      dateTime={post.published_at}
+                      className="text-sm mb-2 block"
+                    >
+                      {new Date(post.published_at).toLocaleDateString('en-GB', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </time>
+                </div>
               </Link>
             </article>
           ))}
