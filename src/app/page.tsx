@@ -14,7 +14,7 @@ export default function Page() {
     
     return (
         <div className="px-10 py-8 max-w-full sm:max-w-2xl md:max-w-4xl mx-auto flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 gap-8">
-          <h1 className={`${caveat.className} text-7xl`}>Marcus Leong</h1>
+          <h1 className={`${caveat.className} text-7xl name`}>Marcus Leong</h1>
           <Navbar />
             <div className="w-64 h-64 overflow-hidden rounded-lg">
               <Image 
