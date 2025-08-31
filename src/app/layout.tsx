@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`min-h-screen ${ebGaramond.variable}`}>
         <ThemeProvider>
-          <main className="p-12">{children}</main>
+          <main className="[@media(hover:hover)]:p-12">{children}</main>
         </ThemeProvider>
       </body>
     </html>

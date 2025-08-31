@@ -16,7 +16,7 @@ export default async function BlogPage() {
       {posts.length === 0 ? (
         <p className="text-gray-600">No posts published yet.</p>
       ) : (
-        <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto border-3 border-dotted p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
+        <div className="space-y-6 [@media(hover:hover)]:mt-8 [@media(hover:none)]:mt-5 flex-grow max-h-[70vh] overflow-y-auto [@media(hover:hover)]:border-3 border-dotted [@media(hover:hover)]:p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
           {posts.map((post) => (
             <article key={post.id} className="pb-6 flex flex-col">
               <Link href={`/blog/${post.slug}`} className="group post-link">
