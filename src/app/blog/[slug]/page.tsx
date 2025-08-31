@@ -1,4 +1,5 @@
 import { getPost } from '@/lib/posts'
+import Navbar from '@/components/Navbar'
 import { notFound } from 'next/navigation'
 
 export default async function BlogPostPage({
@@ -14,25 +15,33 @@ export default async function BlogPostPage({
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-8">
-      <header className="mb-8">
-        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-        {post.published_at && (
-          <div className="text-gray-600">
-            <time dateTime={post.published_at}>
-            {new Date(post.published_at).toLocaleDateString('en-GB', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
-            </time>
-          </div>
-        )}
-      </header>
-      
-      <div className="prose prose-lg max-w-none">
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
+    <div className="flex flex-col items-start px-5 py-8 max-w-full md:max-w-7xl mx-auto min-h-screen">
+      <div className="flex justify-end md:justify-start">
+        <Navbar border-b border-gray-200 />
       </div>
-    </article>
+
+      <div className="w-full border-b border-gray-200 my-4 [@media(hover:hover)]:hidden"></div>
+      <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto border-3 border-dotted p-6 rounded-lg w-full max-w-2xl border-[hsl(331,13%,54%)] [@media(hover:none)]:hidden">
+        <div className="flex justify-between items-center">
+          <h2 className="text-2xl font-bold mb-2">
+            {post.title}
+          </h2>
+          <time 
+              dateTime={post.published_at}
+              className="text-sm mb-2 block"
+            >
+              {new Date(post.published_at).toLocaleDateString('en-GB', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </time>
+        </div>
+        
+        <div className="prose prose-lg max-w-none">
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        </div>
+      </div>
+    </div>
   )
 }

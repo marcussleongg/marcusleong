@@ -19,9 +19,9 @@ export default async function BlogPage() {
         <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto border-3 border-dotted p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
           {posts.map((post) => (
             <article key={post.id} className="pb-6 flex flex-col">
-              <Link href={`/blog/${post.slug}`} className="group">
-                <div className="flex justify-between group-hover:text-[#987988] transition-colors">
-                  <h2 className="text-l font-semibold mb-2">
+              <Link href={`/blog/${post.slug}`} className="group post-link">
+                <div className="flex justify-between items-center group-hover:text-[#987988] transition-colors">
+                  <h2 className="text-lg mb-2">
                     {post.title}
                   </h2>
                   <time 

@@ -16,28 +16,27 @@ export default function Navbar() {
   
   // Define different navbar configurations for different pages
   const getNavConfig = () => {
-    switch (pathname) {
-      case '/':
-        return {
-          leftText: 'travels',
-          leftLink: '/travels',
-          rightText: 'blog',
-          rightLink: '/blog'
-        }
-      case '/travels':
-        return {
-          leftText: 'about',
-          leftLink: '/',
-          rightText: 'blog',
-          rightLink: '/blog'
-        }
-      case '/blog':
-        return {
-          leftText: 'about',
-          leftLink: '/',
-          rightText: 'travels',
-          rightLink: '/travels'
-        }
+    if (pathname === '/') {
+      return {
+        leftText: 'travels',
+        leftLink: '/travels',
+        rightText: 'blog',
+        rightLink: '/blog'
+      }
+    } else if (pathname === '/travels') {
+      return {
+        leftText: 'about',
+        leftLink: '/',
+        rightText: 'blog',
+        rightLink: '/blog'
+      }
+    } else if (pathname.startsWith('/blog')) {
+      return {
+        leftText: 'about',
+        leftLink: '/',
+        rightText: 'travels',
+        rightLink: '/travels'
+      }
     }
   }
   
