@@ -30,12 +30,22 @@ export default function Navbar() {
         rightText: 'blog',
         rightLink: '/blog'
       }
-    } else if (pathname.startsWith('/blog')) {
+    } else if (pathname === '/blog') {
       return {
         leftText: 'about',
         leftLink: '/',
         rightText: 'travels',
         rightLink: '/travels'
+      }
+    }
+    else if (pathname.startsWith('/blog')) {
+      return {
+        leftText: 'about',
+        leftLink: '/',
+        rightText: 'travels',
+        rightLink: '/travels',
+        thirdText: 'blog',
+        thirdLink: '/blog'
       }
     }
   }
@@ -46,6 +56,14 @@ export default function Navbar() {
     <nav>
       <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center space-x-6">
+                {config?.thirdLink && (
+                  <Link 
+                    href={config!.thirdLink}
+                    className={`${ebGaramond.className} nav-link`}
+                  >
+                    {config!.thirdText}
+                  </Link>
+                )}
                 <Link 
                   href={config!.leftLink}
                   className={`${ebGaramond.className} nav-link`}
