@@ -21,7 +21,7 @@ export default async function BlogPostPage({
       </div>
 
       <div className="w-full border-b border-gray-200 my-4 [@media(hover:hover)]:hidden"></div>
-      <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto border-3 border-dotted p-6 rounded-lg w-full max-w-2xl border-[hsl(331,13%,54%)] [@media(hover:none)]:hidden">
+      <div className="space-y-6 mt-8 flex-grow max-h-[70vh] overflow-y-auto [@media(hover:hover)]:border-3 border-dotted [@media(hover:hover)]:p-6 rounded-lg w-full max-w-2xl border-[hsl(331,13%,54%)]">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold mb-2">
             {post.title}
