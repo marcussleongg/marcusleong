@@ -77,6 +77,22 @@ body[data-theme='dark'] .nav-link:hover {
     padding-left: 1rem;
 }
 
+.prose img {
+    max-width: 65%;
+    height: auto;
+    margin: 1rem auto 0rem auto;
+    display: block;
+}
+
+.prose i {
+    font-family: var(--font-eb-garamond), serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    display: block;
+    margin: 0.2rem auto;
+}
+
 /* Hide USA map tooltips on touch devices */
 @media (hover: none) {
   .usa-map-tooltip {
