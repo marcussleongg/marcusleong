@@ -35,7 +35,7 @@ const USAMapComponent = ({ statesData }: USAMapComponentProps) => {
     <div className="flex flex-col [@media(hover:hover)_and_(min-width:1080px)]:flex-row w-full gap-4 [@media(hover:hover)_and_(min-width:1080px)]:gap-8">
       <div className="[@media(hover:hover)_and_(min-width:1080px)]:flex-shrink-0">
         <p className="mb-8">My goal is to visit <strong>all 50 states</strong> before I graduate (hopeful I know). Click on visited states to see my experience!</p>
-        <div className="w-full max-w-2xl [@media(hover:none)]:max-w-full">
+        <div className="w-full max-w-full">
           <USAMap 
             customStates={customStates}
           />
