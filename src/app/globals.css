@@ -76,3 +76,10 @@ body[data-theme='dark'] .nav-link:hover {
     list-style-type: disc;
     padding-left: 1rem;
 }
+
+/* Hide USA map tooltips on touch devices */
+@media (hover: none) {
+  .usa-map-tooltip {
+    display: none !important;
+  }
+}
