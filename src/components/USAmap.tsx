@@ -17,6 +17,7 @@ const USAMapComponent = ({ statesData }: USAMapComponentProps) => {
   }, {} as Record<USAStateAbbreviation, StateData>);
   
   const visitedStates = statesData.map(state => state.state);
+  const numVisitedStates = visitedStates.length;
 
   const handleStateClick = (stateAbbreviation: USAStateAbbreviation) => {
     setSelectedState(stateAbbreviation);
@@ -34,8 +35,9 @@ const USAMapComponent = ({ statesData }: USAMapComponentProps) => {
   return (
     <div className="flex flex-col [@media(hover:hover)_and_(min-width:1080px)]:flex-row w-full gap-4 [@media(hover:hover)_and_(min-width:1080px)]:gap-8">
       <div className="[@media(hover:hover)_and_(min-width:1080px)]:flex-shrink-0">
-        <p className="mb-8">My goal is to visit <strong>all 50 states</strong> before I graduate (hopeful I know). Click on visited states to see my experience!</p>
-        <div className="w-full max-w-full">
+        <p className="mb-4 [@media(hover:hover)_and_(max-width:1080px)]:text-center">My goal is to visit <strong>all 50 states</strong> before I graduate (hopeful I know). Click on visited states to see my experience!</p>
+        <p className="mb-8 text-center text-xl">{numVisitedStates}/50 visited</p>
+        <div className="w-screen -mx-5 md:w-full md:mx-0">
           <USAMap 
             customStates={customStates}
           />
