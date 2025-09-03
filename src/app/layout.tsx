@@ -1,6 +1,11 @@
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { EB_Garamond } from 'next/font/google'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Marcus Leong',
+}
 
 const ebGaramond = EB_Garamond({
   subsets: ['latin'],
