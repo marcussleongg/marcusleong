@@ -16,17 +16,17 @@ export default async function BlogPage() {
       {posts.length === 0 ? (
         <p className="text-gray-600">No posts published yet.</p>
       ) : (
-        <div className="space-y-6 [@media(hover:hover)]:mt-8 [@media(hover:none)]:mt-5 flex-grow max-h-[70vh] overflow-y-auto [@media(hover:hover)]:border-3 border-dotted [@media(hover:hover)]:p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
+        <div className="space-y-3 [@media(hover:hover)]:mt-8 [@media(hover:none)]:mt-5 flex-grow max-h-[70vh] overflow-y-auto [@media(hover:hover)]:border-3 border-dotted [@media(hover:hover)]:p-6 rounded-lg max-md:w-full md:min-w-2xl border-[hsl(331,13%,54%)]">
           {posts.map((post) => (
-            <article key={post.id} className="pb-6 flex flex-col">
+            <article key={post.id} className="flex flex-col">
               <Link href={`/blog/${post.slug}`} className="group post-link">
                 <div className="flex justify-between items-center group-hover:text-[#987988] transition-colors">
-                  <h2 className="text-lg mb-2">
+                  <h2 className="text-lg">
                     {post.title}
                   </h2>
                   <time 
                       dateTime={post.published_at}
-                      className="text-sm mb-2 block"
+                      className="text-sm block"
                     >
                       {new Date(post.published_at).toLocaleDateString('en-GB', {
                         year: 'numeric',
