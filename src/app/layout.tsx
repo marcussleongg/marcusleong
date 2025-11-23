@@ -1,6 +1,7 @@
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { EB_Garamond } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next';
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -29,6 +30,7 @@ export default function RootLayout({
         <ThemeProvider>
           <main className="md:p-12">{children}</main>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
