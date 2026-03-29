@@ -8,7 +8,7 @@ const caveat = Caveat({
   display: 'swap',
 })
 
-const { data } = supabase.storage.from('media').getPublicUrl('IMG_4325.jpeg')
+const { data } = supabase.storage.from('media').getPublicUrl('profile.JPG')
 
 export default function Page() {
     
@@ -73,8 +73,8 @@ export default function Page() {
                 </svg>
               </a>
             </div>
-            <p className="mb-4 text-lg">Hi! I&apos;m a second-year undergrad at Wesleyan University, planning to declare
-              a major in computer science (I tend to do things all over the place though).
+            <p className="mb-4 text-lg">Hi! I&apos;m a second-year undergrad at Wesleyan University,
+              majoring in computer science and math (I tend to do things all over the place though).
             </p>
             <p className="mb-4 text-lg">
               Being from a tiny city state, Singapore, I really enjoy travelling and experiencing

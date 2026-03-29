@@ -37,9 +37,10 @@ const USAMapComponent = ({ statesData }: USAMapComponentProps) => {
       <div className="[@media(hover:hover)_and_(min-width:1080px)]:flex-shrink-0">
         <p className="mb-4 [@media(hover:hover)_and_(max-width:1080px)]:text-center">My goal is to visit <strong>all 50 states</strong> before I graduate (hopeful I know). Click on visited states to see my experience!</p>
         <p className="mb-8 text-center text-xl">{numVisitedStates}/50 visited</p>
-        <div className="w-screen -mx-5 md:w-full md:mx-0">
-          <USAMap 
+        <div className="w-screen -mx-5 md:w-full md:mx-0 [&_.usa-map]:block [&_.usa-map]:h-auto [&_.usa-map]:max-w-full">
+          <USAMap
             customStates={customStates}
+            mapSettings={{ width: '100%', height: 'auto' }}
           />
         </div>
       </div>
