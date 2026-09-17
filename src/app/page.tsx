@@ -73,7 +73,7 @@ export default function Page() {
                 </svg>
               </a>
             </div>
-            <p className="mb-4 text-lg">Hi! I&apos;m a second-year undergrad at Wesleyan University,
+            <p className="mb-4 text-lg">Hi! I&apos;m a third-year undergrad at Wesleyan University,
               majoring in computer science and math (I tend to do things all over the place though).
             </p>
             <p className="mb-4 text-lg">
