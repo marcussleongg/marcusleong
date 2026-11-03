@@ -6,7 +6,7 @@ const papers = [
   {
     title: 'A Feasibility Study on Retrieval Practice Using Large Language Models',
     authors: 'Marcus Leong, Jennifer Rose, Lisa Dierker, Antonio Laverghetta Jr.',
-    venue: 'AIME 2026',
+    venue: 'Artificial Intelligence in Measurement and Education 2026',
     url: 'https://aclanthology.org/2026.aimecon-main.21/',
   },
 ]
