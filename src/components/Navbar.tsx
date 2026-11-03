@@ -73,26 +73,26 @@ export default function Navbar() {
     <nav>
       <div className="max-w-6xl mx-auto px-4">
           <div className="flex items-center space-x-6">
+                <Link
+                  href={config!.leftLink}
+                  className={`${ebGaramond.className} nav-link`}
+                >
+                  {config?.leftText}
+                </Link>
+                <Link
+                  href={config!.rightLink}
+                  className={`${ebGaramond.className} nav-link`}
+                >
+                  {config!.rightText}
+                </Link>
                 {config?.thirdLink && (
-                  <Link 
+                  <Link
                     href={config!.thirdLink}
                     className={`${ebGaramond.className} nav-link`}
                   >
                     {config!.thirdText}
                   </Link>
                 )}
-                <Link 
-                  href={config!.leftLink}
-                  className={`${ebGaramond.className} nav-link`}
-                >
-                  {config?.leftText}
-                </Link>
-                <Link 
-                  href={config!.rightLink}
-                  className={`${ebGaramond.className} nav-link`}
-                >
-                  {config!.rightText}
-                </Link>
                 {config?.fourthLink && (
                   <Link
                     href={config!.fourthLink}
