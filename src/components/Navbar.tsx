@@ -21,21 +21,36 @@ export default function Navbar() {
         leftText: 'travels',
         leftLink: '/travels',
         rightText: 'blog',
-        rightLink: '/blog'
+        rightLink: '/blog',
+        fourthText: 'research',
+        fourthLink: '/research'
       }
     } else if (pathname === '/travels') {
       return {
         leftText: 'about',
         leftLink: '/',
         rightText: 'blog',
-        rightLink: '/blog'
+        rightLink: '/blog',
+        fourthText: 'research',
+        fourthLink: '/research'
       }
     } else if (pathname === '/blog') {
       return {
         leftText: 'about',
         leftLink: '/',
         rightText: 'travels',
-        rightLink: '/travels'
+        rightLink: '/travels',
+        fourthText: 'research',
+        fourthLink: '/research'
+      }
+    } else if (pathname === '/research') {
+      return {
+        leftText: 'about',
+        leftLink: '/',
+        rightText: 'travels',
+        rightLink: '/travels',
+        thirdText: 'blog',
+        thirdLink: '/blog'
       }
     }
     else if (pathname.startsWith('/blog')) {
@@ -45,7 +60,9 @@ export default function Navbar() {
         rightText: 'travels',
         rightLink: '/travels',
         thirdText: 'blog',
-        thirdLink: '/blog'
+        thirdLink: '/blog',
+        fourthText: 'research',
+        fourthLink: '/research'
       }
     }
   }
@@ -76,6 +93,14 @@ export default function Navbar() {
                 >
                   {config!.rightText}
                 </Link>
+                {config?.fourthLink && (
+                  <Link
+                    href={config!.fourthLink}
+                    className={`${ebGaramond.className} nav-link`}
+                  >
+                    {config!.fourthText}
+                  </Link>
+                )}
             <ThemeToggle />
           </div>
         </div>

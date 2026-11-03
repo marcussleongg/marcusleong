@@ -11,6 +11,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Serves the public Supabase media bucket from this site's own domain
+  async rewrites() {
+    return [
+      {
+        source: '/files/:path*',
+        destination: 'https://tkjujwzxozukhsrntaij.supabase.co/storage/v1/object/public/media/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;

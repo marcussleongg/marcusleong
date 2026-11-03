@@ -11,77 +11,95 @@ const caveat = Caveat({
 const { data } = supabase.storage.from('media').getPublicUrl('profile.JPG')
 
 export default function Page() {
-    
-    return (
-        <div className="px-10 lg:-mt-30 max-w-full sm:max-w-2xl lg:max-w-4xl mx-auto flex flex-col items-center text-left lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-4 lg:gap-6 lg:items-center [@media(hover:none)]:p-20">
-          {/* Top left: Name */}
-          <h1 className={`${caveat.className} text-7xl [@media(hover:none)]:text-5xl name lg:justify-self-start lg:self-end lg:mb-15`}>Marcus Leong</h1>
-          
-          {/* Top right: Navbar */}
-          <div className="flex justify-center lg:justify-self-end lg:self-end lg:mb-15">
-            <Navbar />
-          </div>
-          
-          {/* Bottom left: Image */}
-          <div className="lg:w-86 lg:h-86 w-64 h-64 overflow-hidden rounded-lg lg:justify-self-start lg:self-center">
-            <Image 
-              src={data.publicUrl} 
-              alt="meow" 
-              width={400} 
-              height={400}
-              className="object-cover object-center w-full h-full scale-180"
-            />
-          </div>
-          
-          {/* Bottom right: Text */}
-          <div className="lg:justify-self-start lg:self-center">
-            {/* Social Links */}
-            <div className="flex items-center justify-center gap-4 mt-2 mb-8">
-              {/* GitHub Link */}
-              <a 
-                href="https://github.com/marcussleongg" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#a085c1] hover:text-[#b196d3]"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="transition-transform hover:scale-110"
-                >
-                  <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-                </svg>
-              </a>
-              
-              {/* LinkedIn Link */}
-              <a 
-                href="https://linkedin.com/in/marcussleongg" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-[#a085c1] hover:text-[#b196d3]"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="transition-transform hover:scale-110"
-                >
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </a>
-            </div>
-            <p className="mb-4 text-lg">Hi! I&apos;m a third-year undergrad at Wesleyan University,
-              majoring in computer science and math (I tend to do things all over the place though).
-            </p>
-            <p className="mb-4 text-lg">
-              Being from a tiny city state, Singapore, I really enjoy travelling and experiencing
-              how big the world is, and try my best to see how different people live. A 6-week solo
-              backpacking trip across Eastern and Central Europe in the Summer of 2024 set it all off.
-            </p>
-          </div>
+
+  return (
+    <div className="px-10 lg:-mt-30 max-w-full sm:max-w-2xl lg:max-w-4xl mx-auto flex flex-col items-center text-left lg:grid lg:grid-cols-2 lg:grid-rows-2 gap-4 lg:gap-6 lg:items-center [@media(hover:none)]:p-20">
+      {/* Top left: Name */}
+      <h1 className={`${caveat.className} text-7xl [@media(hover:none)]:text-5xl name lg:justify-self-start lg:self-end lg:mb-15`}>Marcus Leong</h1>
+
+      {/* Top right: Navbar */}
+      <div className="flex justify-center lg:justify-self-end lg:self-end lg:mb-15">
+        <Navbar />
+      </div>
+
+      {/* Bottom left: Image */}
+      <div className="lg:w-86 lg:h-86 w-64 h-64 overflow-hidden rounded-lg lg:justify-self-start lg:self-center">
+        <Image
+          src={data.publicUrl}
+          alt="meow"
+          width={400}
+          height={400}
+          className="object-cover object-center w-full h-full scale-180"
+        />
+      </div>
+
+      {/* Bottom right: Text */}
+      <div className="lg:justify-self-start lg:self-center">
+        {/* Social Links */}
+        <div className="flex items-center justify-center gap-4 mt-2 mb-8">
+          {/* GitHub Link */}
+          <a
+            href="https://github.com/marcussleongg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#a085c1] hover:text-[#b196d3]"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="transition-transform hover:scale-110"
+            >
+              <path d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+            </svg>
+          </a>
+
+          {/* LinkedIn Link */}
+          <a
+            href="https://linkedin.com/in/marcussleongg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#a085c1] hover:text-[#b196d3]"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="transition-transform hover:scale-110"
+            >
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=nQJxh00AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar"
+            className="text-[#a085c1] hover:text-[#b196d3]"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 32 448 448"
+              fill="currentColor"
+              className="transition-transform hover:scale-110"
+            >
+              {/* Academicons google-scholar-square (SIL OFL 1.1) */}
+              <path d="M 48 32 C 21.5 32 0 53.5 0 80 L 0 432 C 0 458.5 21.5 480 48 480 L 400 480 C 426.5 480 448 458.5 448 432 L 448 80 C 448 53.5 426.5 32 400 32 L 48 32 z M 188.69531 96 L 366.93555 96 L 350.46484 108.85938 L 350.46484 131.55273 C 356.58074 132.33805 355.93359 136.01292 355.93359 140.41016 L 355.93359 247.63281 C 355.93359 252.59844 351.87154 256.66211 346.90625 256.66211 L 343.58203 256.66211 C 338.6164 256.66211 334.55273 252.59808 334.55273 247.63281 L 334.55273 140.41016 C 334.55273 136.00235 333.91278 132.32357 340.07422 131.54883 L 340.07422 117.2832 L 292.65039 156.17578 C 293.19834 157.19151 293.71814 157.84328 294.21289 158.69531 C 298.37973 166.07266 300.50195 175.2445 300.50195 186.45508 C 300.50195 195.04833 299.06991 202.77005 296.16602 209.58594 C 293.2752 216.4033 289.75942 221.97045 285.6582 226.25977 C 281.55701 230.56406 277.44275 234.49591 273.32812 238.03711 C 269.21486 241.58524 265.69906 245.28375 262.82031 249.125 C 259.91892 252.95314 258.47266 256.91247 258.47266 261.01367 C 258.47266 265.12181 260.3486 269.29452 264.08594 273.5 C 267.8098 277.7186 272.39123 281.80635 277.80859 285.84375 C 283.23797 289.85418 288.65493 294.30653 294.07227 299.15039 C 299.50131 303.98623 304.05933 310.21146 307.7832 317.77148 C 311.53367 325.35666 313.4082 333.7088 313.4082 342.88867 C 313.4082 354.99795 310.32064 365.93466 304.16211 375.66797 C 297.99007 385.36114 289.94334 393.09684 280.06055 398.76758 C 270.15151 404.47697 259.55333 408.77389 248.25195 411.67773 C 236.92398 414.55506 225.68694 416 214.46289 416 C 207.37866 416 200.23024 415.4525 193.04102 414.33398 C 185.82883 413.21398 178.60279 411.2357 171.32422 408.44922 C 164.03255 405.64267 157.57316 402.19843 151.97461 398.05859 C 146.36256 393.96392 141.84477 388.67686 138.38086 382.23828 C 134.91694 375.79976 133.19727 368.55971 133.19727 360.51953 C 133.19727 350.9809 135.85421 342.13421 141.17969 333.88477 C 146.50481 325.69549 153.56199 318.85925 162.33789 313.44336 C 177.65114 303.91787 201.67434 298.03206 234.36914 295.80664 C 226.89588 286.46381 223.14648 277.66689 223.14648 269.4375 C 223.14648 264.75479 224.36834 259.73766 226.79102 254.32031 C 222.8845 254.86718 218.86242 255.17383 214.75977 255.17383 C 197.19704 255.17383 182.36436 249.46431 170.32031 237.9668 C 158.27629 226.48824 152.26172 212.1206 152.26172 194.75 C 152.26172 192.93401 152.31391 191.33134 152.44336 189.56055 L 81.064453 189.56055 L 188.69531 96 z M 220.07422 134.33398 C 208.8753 134.33398 200.28236 138.36304 194.29297 146.4043 C 188.30507 154.42442 185.30859 164.13895 185.30859 175.55078 C 185.30859 185.27059 186.9492 195.16722 190.23047 205.25781 C 193.49857 215.34329 198.8517 224.34729 206.35156 232.2832 C 213.8248 240.23914 222.52348 244.20898 232.40625 244.20898 C 243.42216 244.20898 252.02911 240.51954 258.20117 233.13672 C 264.34622 225.76629 267.43164 216.46329 267.43164 205.25781 C 267.43164 195.71264 265.80524 185.72081 262.53711 175.27148 C 259.28103 164.80901 253.85206 155.36886 246.27344 146.96484 C 238.7211 138.53274 229.97011 134.33398 220.07422 134.33398 z M 238.5918 306.41406 C 230.55711 306.41406 222.65275 307.12634 214.89258 308.54492 C 207.13241 309.92488 199.47583 312.25478 191.92383 315.54297 C 184.34522 318.81255 178.22564 323.61796 173.56445 329.97266 C 168.87661 336.31933 166.54492 343.79435 166.54492 352.39453 C 166.54492 360.59035 168.60405 367.90081 172.71875 374.26758 C 176.8214 380.59526 182.2367 385.55152 188.96875 389.09961 C 195.70076 392.65432 202.7576 395.33574 210.12695 397.09961 C 217.50975 398.85145 225.02377 399.76367 232.67969 399.76367 C 247.82231 399.76367 260.85547 396.35252 271.79297 389.53516 C 282.70351 382.71926 288.17383 372.1931 288.17383 357.98633 C 288.17383 354.99821 287.75694 352.05432 286.93555 349.18359 C 286.07694 346.2797 285.2319 343.79439 284.39844 341.73047 C 283.56499 339.70522 281.97671 337.26317 279.63281 334.45117 C 277.302 331.63256 275.51712 329.54862 274.31836 328.16211 C 273.09446 326.73003 270.80621 324.68508 267.43164 321.98242 C 264.08738 319.26867 261.95132 317.57694 261 316.95117 L 260.99805 316.95117 C 260.06034 316.29355 257.62635 314.51567 253.70703 311.63086 C 249.78813 308.72002 247.64052 307.17679 247.26172 306.99414 C 245.20436 306.62337 242.31565 306.41406 238.5918 306.41406 z" />
+            </svg>
+          </a>
         </div>
-    )
-  }
+        <p className="mb-4 text-lg">Hi! I&apos;m a third-year undergrad at Wesleyan University,
+          majoring in computer science and math (I tend to do things all over the place though).
+        </p>
+        <p className="mb-4 text-lg">
+          Being from a tiny city state, Singapore, I really enjoy travelling and experiencing
+          how big the world is, and try my best to see how different people live. A 6-week solo
+          backpacking trip across Eastern and Central Europe in the Summer of 2024 set it all off.
+        </p>
+      </div>
+    </div>
+  )
+}
